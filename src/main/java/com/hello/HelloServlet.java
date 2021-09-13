@@ -1,6 +1,8 @@
 package com.hello;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +22,18 @@ public class HelloServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("클라이언트 요청이 있을 때 마다 실행된다 - service()");
+		
+		response.setContentType("text/html"); // 이제부터 들어오는 문자들을 html로 인식하라는 명령어?
+		
+		PrintWriter out = response.getWriter();// 웹으로 보내주는 IO
+		out.println("<html>");
+		out.println("<head>");
+		out.println("</head>");
+		out.println("<body>");
+		out.println("Hello Servlet!!");
+		out.println("</body>");
+		out.println("</html>");
+		
 	}
        
 	@Override
