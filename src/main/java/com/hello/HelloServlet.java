@@ -38,6 +38,6 @@ public class HelloServlet extends HttpServlet {
        
 	@Override
 	public void destroy() {
-		System.out.println("서블릿 종료될 때 호추로딘다 - destroy()");
+		System.out.println("서블릿 종료될 때 호출된다 - destroy()");
 	}
 }
